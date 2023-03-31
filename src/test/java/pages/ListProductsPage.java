@@ -18,8 +18,8 @@ public class ListProductsPage {
     public String capturarMensagemErro(){
         return navegador.findElement(By.cssSelector(".toast.rounded")).getText();
     }
+    public String capturarMensagemSucesso(){
+        return navegador.findElement(By.cssSelector(".toast.rounded")).getText();
+    }
 }
-   // public ListProductsPage submeterFormsLogin(){
-    //    navegador.findElement(By.cssSelector("button[type = submit]")).click();
-    //    return new ListProductsPage(navegador);
-  //  }
+//<div class="toast rounded" style="top: 0px; transition: transform 0.2s ease 0s, opacity 0.2s ease 0s; opacity: 0.0167346; margin-top: -39.1633px;">Produto adicionado com sucesso</div>

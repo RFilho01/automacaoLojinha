@@ -33,12 +33,34 @@ public class ProductsTests {
                 .informarProdutoValor("0")
                 .informarCoresProduto("rosa, azul")
                 .informarProdutoNome("cadeira")
-                .submeterFormsComErro()
+                .submeterForms()
                 .capturarMensagemErro();
         Assertions.assertEquals("O valor do produto deve estar entre R$ 0,01 e R$ 7.000,00", mensagemErro);
 
     }
-@AfterEach
+
+    @Test
+    @DisplayName("Registrando produto dentre o valor permitido")
+    public void testeCadastrandoProdutoCorretamente(){
+
+        String mensagemSucesso = new LoginPage(navegador)
+                .informarUsuario("admin")
+                .informarSenha("admin")
+                .submeterFormsLogin()
+                .submeterFormListProduct()
+                .informarProdutoValor("50")
+                .informarCoresProduto("azul, roxo")
+                .informarProdutoNome("Macbook")
+                .submeterForms()
+                .capturarMensagemSucesso();
+        Assertions.assertEquals("Produto adicionado com sucesso", mensagemSucesso);
+
+    }
+
+
+
+
+    @AfterEach
     public void afterEach(){
     navegador.quit();
 }

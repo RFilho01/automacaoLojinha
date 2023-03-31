@@ -24,7 +24,7 @@ public class RegisterItemPage {
         navegador.findElement(By.id("produtocores")).sendKeys(cor);
         return this;
     }
-    public ListProductsPage submeterFormsComErro() {
+    public ListProductsPage submeterForms() {
         navegador.findElement(By.cssSelector("button[type = 'submit']")).click();
         return new ListProductsPage(navegador);
     }
